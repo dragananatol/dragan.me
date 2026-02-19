@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dragan.me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #e8ede0;
+      --bg2: #dde5d0;
+      --ink: #2c3325;
+      --ink-light: #6b7560;
+      --accent: #4a5e38;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 20% 80%, var(--bg2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, #d4dfc6 0%, transparent 50%);
+      font-family: 'Jost', sans-serif;
+      color: var(--ink);
+      overflow: hidden;
+      position: relative;
+      cursor: default;
+    }
+
+    /* Subtle grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+
+
+    /* Name — centered, large */
+    .name {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .name h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      letter-spacing: 0.12em;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .name .sub {
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 200;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* Bottom-right contact */
+    .contact {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.8rem;
+      text-align: right;
+      z-index: 1;
+      animation: fadeUp 1.4s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .contact .label {
+      font-size: 0.6rem;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+      position: relative;
+    }
+
+    .contact a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .contact a:hover::after {
+      width: 100%;
+    }
+
+    /* Top-left subtle mark */
+    .mark {
+      position: fixed;
+      top: 2.2rem;
+      left: 2.5rem;
+      font-size: 0.6rem;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      z-index: 1;
+      animation: fadeUp 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* name needs its own transform */
+    .name {
+      animation: fadeUpCenter 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeUpCenter {
+      from { opacity: 0; transform: translate(-50%, calc(-50% + 18px)); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <span class="mark">dragan.me</span>
+
+  <div class="name">
+    <h1>Dragan</h1>
+    <p class="sub">Software &amp; Engineering</p>
+  </div>
+
+  <div class="contact">
+    <p class="label">Get in touch</p>
+    <a href="mailto:anatol@dragan.me">anatol@dragan.me</a>
+  </div>
+
+</body>
+</html>
