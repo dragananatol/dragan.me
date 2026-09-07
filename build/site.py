@@ -367,4 +367,77 @@ def product_page(p, nxt):
 (OUT/"index.html").write_text(page("Dragan — Work",
   "A small engineering studio in Timișoara. EMAS Residence, Plomus, Bibliada and Breakfast & Pray.",
   index_body, INDEX_CSS, home=True), encoding="utf-8")
+
+# ------------------------------------------------------------------ 404
+# Also the landing page for Bibliada friend invites. GitHub Pages is static and
+# cannot route /bibliada/i/<code>, so the custom 404 doubles as that route: it
+# reads the code off location.pathname. The HTTP status stays 404, which nobody
+# who matters ever sees — iOS and Android hand the URL straight to the app via
+# /.well-known/{apple-app-site-association,assetlinks.json}, and this page only
+# renders for a desktop browser or a phone without the app.
+#
+# It deliberately does NOT check the code against anything: an unauthenticated
+# page that tells real codes from fake ones is a free brute-force oracle for a
+# link that auto-friends and grants XP. Same reasoning as the API's
+# InviteLandingController, which stays up for links shared before the move.
+NOT_FOUND_CSS = """
+  .nf{min-height:calc(100svh - 74px - 200px);display:flex;align-items:center;padding:clamp(56px,12vh,120px) 0}
+  .nf h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,6vw,72px);line-height:1.05;letter-spacing:-.015em;margin:18px 0 0}
+  .nf .lede{font-family:var(--display);font-size:clamp(18px,2.2vw,26px);color:var(--muted);margin-top:18px;max-width:34ch}
+  .nf .code{font-family:var(--sans);font-weight:400;font-size:clamp(22px,3.4vw,34px);letter-spacing:.14em;
+    margin-top:30px;padding:18px 24px;border:1px solid var(--line);border-radius:14px;background:var(--card);
+    display:inline-block;word-break:break-all;-webkit-user-select:all;user-select:all}
+  .nf .acts{margin-top:34px}
+  .nf .hint{margin-top:16px;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+"""
+
+NOT_FOUND_BODY = """
+<section class="nf">
+  <div class="wrap">
+    <div class="eyebrow" id="nfKicker">Error 404</div>
+    <h1 id="nfTitle">This page moved on.</h1>
+    <p class="lede" id="nfLede">Nothing lives at this address. The work is one click away.</p>
+    <div class="code" id="nfCode" hidden></div>
+    <div class="acts" id="nfActs"><a class="act primary" href="/">All work</a></div>
+    <p class="hint" id="nfHint" hidden></p>
+    <noscript><p class="hint">Codul invitației este ultima parte a adresei din bara browserului.</p></noscript>
+  </div>
+</section>
+<script>
+  // /bibliada/i/<code> — the invite link. Anything else stays a plain 404.
+  var m = location.pathname.match(/^\\/bibliada\\/i\\/([^\\/]+)\\/?$/);
+  if (m) {
+    var code = decodeURIComponent(m[1]).trim().slice(0, 64);
+    if (code) {
+      document.title = 'Invitație Bibliada — Dragan';
+      document.getElementById('nfKicker').textContent = 'Bibliada';
+      document.getElementById('nfTitle').textContent = 'Ai primit o invitație la Bibliada.';
+      document.getElementById('nfLede').textContent =
+        'Deschide aplicația și folosește codul de mai jos ca să deveniți prieteni.';
+      var el = document.getElementById('nfCode');
+      el.textContent = code;           // textContent, never innerHTML — the code is URL-supplied
+      el.hidden = false;
+      document.getElementById('nfActs').innerHTML = '';
+      var open = document.createElement('a');
+      open.className = 'act primary';
+      open.href = 'bibliada://i/' + encodeURIComponent(code);
+      open.textContent = 'Deschide în aplicație';
+      var play = document.createElement('a');
+      play.className = 'act';
+      play.href = 'https://play.google.com/store/apps/details?id=com.bibliada';
+      play.textContent = 'Google Play';
+      document.getElementById('nfActs').append(open, play);
+      var hint = document.getElementById('nfHint');
+      // ponytail: no App Store deep link — the numeric app id does not exist in
+      // any repo yet. Swap for https://apps.apple.com/app/id<id> once published.
+      hint.textContent = 'Pe iPhone, caută Bibliada în App Store.';
+      hint.hidden = false;
+    }
+  }
+</script>
+"""
+
+(OUT/"404.html").write_text(page("Not found — Dragan",
+  "Nothing lives at this address.", NOT_FOUND_BODY, NOT_FOUND_CSS), encoding="utf-8")
+
 print("\n".join(f"{f.name}  {f.stat().st_size//1024}KB" for f in sorted(OUT.glob('*.html'))))

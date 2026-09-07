@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bibliada",
+      "sha256_cert_fingerprints": [
+        "05:04:05:00:B5:4E:51:3B:06:2F:85:C7:4F:C6:D9:A5:8A:A6:2E:54:D3:50:B3:D0:11:65:3E:BA:D4:AA:8F:A2"
+      ]
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["DQRL57CD83.app.bibliada"],
+        "components": [
+          { "/": "/bibliada/i/*", "comment": "Bibliada friend invites. One wildcard segment for the code; never a bare * — that would hand the app every present and future path on dragan.me." }
+        ]
+      }
+    ]
+  }
+}
