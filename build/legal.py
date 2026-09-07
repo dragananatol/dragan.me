@@ -55,8 +55,9 @@ You are responsible for your password and for what happens through your account.
 the text and the design — belongs to us and may not be copied or redistributed without our written consent.</p>
 
 <h3>Donations</h3>
-<p>Donations made in the app are voluntary, processed by Stripe, unlock no features and are not refundable.
-Bibliada can be played in full without paying anything.</p>
+<p>Donations are offered only in the Android version of Bibliada. They are voluntary, processed by Stripe,
+unlock no features and are not refundable. The iOS version offers no donations and no purchases of any kind.
+Bibliada can be played in full, on either platform, without paying anything.</p>
 
 <h3>Availability and liability</h3>
 <p>The service is provided “as is”. We may change or discontinue features, and the daily game depends on your
@@ -82,7 +83,7 @@ Contact: <a href="mailto:contact@dragan.me">contact@dragan.me</a>. We process pe
   <li><strong>Profile</strong>: profile picture, language, time zone, theme and notification preferences.</li>
   <li><strong>Gameplay</strong>: answers, scores, XP, daily streak, league standing, duels and your friends list.</li>
   <li><strong>Technical</strong>: app version, operating system and your push notification token.</li>
-  <li><strong>Donations</strong>: a record of the donation. Card details go straight to Stripe and never reach us.</li>
+  <li><strong>Donations</strong> (Android only): a record of the donation. Card details go straight to Stripe and never reach us.</li>
 </ul>
 
 <h3>Why we use it</h3>
@@ -95,7 +96,7 @@ Contact: <a href="mailto:contact@dragan.me">contact@dragan.me</a>. We process pe
 
 <h3>Who we share it with</h3>
 <p>Only the providers we need to run the app: <strong>Google Firebase</strong> (push notifications),
-<strong>Stripe</strong> (donations), <strong>RevoPush</strong> (app updates) and our server hosting provider.
+<strong>Stripe</strong> (donations, Android only), <strong>RevoPush</strong> (app updates) and our server hosting provider.
 We show no ads, we do not sell data, and we use no tracking or advertising SDKs.</p>
 
 <h3>How long we keep it</h3>
