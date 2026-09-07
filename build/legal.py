@@ -133,12 +133,12 @@ confirm the deletion to you.</p>
 
 legal_body = f"""
 <section class="doc"><div class="wrap">
-  <a class="back" href="../index.html">← Dragan.me</a>
+  <a class="back" href="/">← Dragan.me</a>
   <div class="upd" style="margin-top:26px">Last updated {UPDATED}</div>
   <h1>Bibliada — terms,<br>privacy &amp; your account</h1>
   <div class="toc">
     <a href="#terms">Terms</a><a href="#privacy">Privacy</a>
-    <a href="#delete">Account deletion</a><a href="../support/bibliada.html">Support</a>
+    <a href="#delete">Account deletion</a><a href="/support/bibliada.html">Support</a>
   </div>
   {sec("01","Terms of use",TERMS,"terms")}
   {sec("02","Privacy policy",PRIVACY,"privacy")}
@@ -156,15 +156,15 @@ SUPPORT = """
 <p><strong>A puzzle has a wrong answer.</strong> Send us the game name, the date and a screenshot — we fix the content and publish it without needing a store update.</p>
 <p><strong>I want another game or another language.</strong> Tell us. Content ships in Romanian, English and Spanish, and new games come out of what people ask for.</p>
 <p><strong>How do I delete my account?</strong> In <strong>Settings → Account → Delete account</strong>, or see the
-<a href="../legal/bibliada.html#delete">account deletion page</a>.</p>
+<a href="/legal/bibliada.html#delete">account deletion page</a>.</p>
 """
 
 support_body = f"""
 <section class="doc"><div class="wrap">
-  <a class="back" href="../index.html">← Dragan.me</a>
+  <a class="back" href="/">← Dragan.me</a>
   <div class="upd" style="margin-top:26px">Support</div>
   <h1>Bibliada — support</h1>
-  <div class="toc"><a href="../legal/bibliada.html#terms">Terms</a><a href="../legal/bibliada.html#privacy">Privacy</a><a href="../legal/bibliada.html#delete">Account deletion</a></div>
+  <div class="toc"><a href="/legal/bibliada.html#terms">Terms</a><a href="/legal/bibliada.html#privacy">Privacy</a><a href="/legal/bibliada.html#delete">Account deletion</a></div>
   <section class="sec">{SUPPORT}</section>
 </div></section>
 """

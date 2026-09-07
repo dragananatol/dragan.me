@@ -77,8 +77,8 @@ PROJECTS = [
              ("Three languages","Romanian, English and Spanish content packs kept in parity by a checker.")],
    stack=["React Native","NestJS","PostgreSQL","Redis","BullMQ","RO · EN · ES"],
    links=[("dead","Coming 2026",""),
-          ("ghost","Privacy","/legal/bibliada/privacy.html"),
-          ("ghost","Terms","/legal/bibliada/terms.html"),
+          ("ghost","Privacy","/legal/bibliada.html#privacy"),
+          ("ghost","Terms","/legal/bibliada.html#terms"),
           ("ghost","Notify me","mailto:contact@dragan.me?subject=Bibliada")]),
 
  dict(slug="breakfast-pray", scene="bnp", idx="04", kind="Faith Community",
@@ -94,8 +94,8 @@ PROJECTS = [
              ("Push, sparingly","Notified when your circle needs you, not when an algorithm wants you.")],
    stack=["React Native","NestJS","PostgreSQL","iOS","Push"],
    links=[("primary","App Store","https://apps.apple.com/ro/app/breakfast-pray/id6765490933"),
-          ("ghost","Privacy","/legal/breakfast-pray/privacy.html"),
-          ("ghost","Terms","/legal/breakfast-pray/terms.html"),
+          ("ghost","Privacy","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20privacy"),
+          ("ghost","Terms","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20terms"),
           ("ghost","Support","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray")]),
 ]
 
@@ -179,8 +179,8 @@ def page(title, desc, body, extra_css="", home=False):
 <body>
 <header class="site" id="siteHeader">
   <div class="wrap site-inner">
-    <a class="brand" href="{'#top' if home else 'index.html'}">Dragan<span>.me</span></a>
-    <nav class="top">{'<a href="#work">Work</a><a href="#contact">Contact</a>' if home else '<a href="index.html">All work</a><a href="#contact">Contact</a>'}</nav>
+    <a class="brand" href="{'#top' if home else '/'}">Dragan<span>.me</span></a>
+    <nav class="top">{'<a href="#work">Work</a><a href="#contact">Contact</a>' if home else '<a href="/">All work</a><a href="#contact">Contact</a>'}</nav>
   </div>
 </header>
 {body}
@@ -192,8 +192,8 @@ def page(title, desc, body, extra_css="", home=False):
       <div class="foot-meta">Dragan Software Ultimate S.R.L.<br>Timișoara · România<br>© 2026</div>
     </div>
     <div class="foot-legal">
-      <a href="index.html">Work</a><a href="/legal/privacy.html">Privacy</a>
-      <a href="/legal/terms.html">Terms</a><a href="mailto:contact@dragan.me?subject=Support">Support</a>
+      <a href="/">Work</a><a href="/legal/bibliada.html">Bibliada legal</a>
+      <a href="/support/bibliada.html">Bibliada support</a><a href="mailto:contact@dragan.me?subject=Support">Support</a>
     </div>
   </div>
 </footer>
