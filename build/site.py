@@ -39,8 +39,9 @@ PROJECTS = [
              ("Live availability","Sold, reserved and free units update in place — no stale PDF price lists."),
              ("Unit dossier","Surface, orientation, floor plan and price kept on the unit itself."),
              ("Reservation trail","Interest, reservation and paperwork stages tracked per unit."),
-             ("Mobile app","The same catalogue in the sales agent's pocket, built in React Native.")],
-   stack=["NestJS","Angular","React Native","PostgreSQL","iOS"],
+             ("Mobile app","The same catalogue in the sales agent's pocket, built in React Native."),
+             ("Cloud infrastructure","Containers ship from GitLab CI to ECS in eu-central-1, with Cognito for identity, S3 and SES behind the scenes, CloudFront in front and OpenTelemetry tracing through the API.")],
+   stack=["AWS ECS","Cognito","CloudFront","NestJS","Angular SSR","React Native"],
    links=[("primary","Visit site","https://emasresidence.ro"),
           ("ghost","Privacy","https://emasresidence.ro/privacy"),
           ("ghost","Terms","https://emasresidence.ro/termeni"),
@@ -57,7 +58,7 @@ PROJECTS = [
              ("CRM for agents","Clients, leads, viewings, deals and commissions in one pipeline."),
              ("Market intel","Local price movement, comparables and a morning brief in your inbox."),
              ("Web and mobile","Angular on the desktop, React Native on iOS and Android, one API behind both.")],
-   stack=["NestJS","Angular","React Native","PostgreSQL","Maps","Scraping","LLM"],
+   stack=["NestJS","Angular","React Native","PostgreSQL","Redis","Claude API"],
    links=[("primary","Visit site","https://plomus.ro"),
           ("ghost","Privacy","https://plomus.ro/privacy"),
           ("ghost","Terms","https://plomus.ro/terms"),
@@ -75,7 +76,7 @@ PROJECTS = [
              ("Live duels","Head-to-head rounds against a friend."),
              ("Offline first","Play with no signal; the server reconciles when you come back."),
              ("Three languages","Romanian, English and Spanish content packs kept in parity by a checker.")],
-   stack=["React Native","NestJS","PostgreSQL","Redis","BullMQ","RO · EN · ES"],
+   stack=["React Native","NestJS","PostgreSQL","Redis · BullMQ","Socket.IO","Stripe"],
    links=[("dead","Coming 2026",""),
           ("ghost","Privacy","/legal/bibliada.html#privacy"),
           ("ghost","Terms","/legal/bibliada.html#terms"),
@@ -92,7 +93,7 @@ PROJECTS = [
              ("Comments","Short replies in place, so a thread stays a conversation."),
              ("Moderation","Validation of new members and roles the host controls."),
              ("Push, sparingly","Notified when your circle needs you, not when an algorithm wants you.")],
-   stack=["React Native","NestJS","PostgreSQL","iOS","Push"],
+   stack=["React Native","NestJS","PostgreSQL","Firebase Push","iOS"],
    links=[("primary","App Store","https://apps.apple.com/ro/app/breakfast-pray/id6765490933"),
           ("ghost","Privacy","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20privacy"),
           ("ghost","Terms","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20terms"),
@@ -157,9 +158,9 @@ def page(title, desc, body, extra_css="", home=False):
 
   footer.site{{padding:80px 0 64px;border-top:1px solid var(--line);margin-top:clamp(60px,10vh,120px)}}
   .foot-grid{{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px}}
-  footer .big{{font-family:var(--display);font-weight:300;font-size:clamp(32px,5vw,52px);line-height:1}}
-  footer a.mail{{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .3s}}
-  footer a.mail:hover{{border-color:var(--ink)}}
+  footer .big{{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.3vw,30px);line-height:1.2;letter-spacing:.004em}}
+  footer a.mail{{text-decoration:none;background-image:linear-gradient(var(--edge),var(--edge));background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:4px;transition:background-image .3s,color .3s}}
+  footer a.mail:hover{{background-image:linear-gradient(var(--ink),var(--ink))}}
   .foot-meta{{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:2}}
   @media(max-width:640px){{.foot-meta{{text-align:left}}footer.site{{padding:56px 0 48px}}}}
   .foot-legal{{margin-top:40px;display:flex;gap:24px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;text-transform:uppercase}}
@@ -187,7 +188,7 @@ def page(title, desc, body, extra_css="", home=False):
 <footer class="site" id="contact">
   <div class="wrap">
     <div class="foot-grid">
-      <div><div class="eyebrow" style="margin-bottom:18px">Get in touch</div>
+      <div><div class="eyebrow" style="margin-bottom:14px">Get in touch</div>
         <div class="big"><a class="mail" href="mailto:contact@dragan.me">contact@dragan.me</a></div></div>
       <div class="foot-meta">Dragan Software Ultimate S.R.L.<br>Timișoara · România<br>© 2026</div>
     </div>

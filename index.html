@@ -133,9 +133,9 @@
 
   footer.site{padding:80px 0 64px;border-top:1px solid var(--line);margin-top:clamp(60px,10vh,120px)}
   .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px}
-  footer .big{font-family:var(--display);font-weight:300;font-size:clamp(32px,5vw,52px);line-height:1}
-  footer a.mail{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .3s}
-  footer a.mail:hover{border-color:var(--ink)}
+  footer .big{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.3vw,30px);line-height:1.2;letter-spacing:.004em}
+  footer a.mail{text-decoration:none;background-image:linear-gradient(var(--edge),var(--edge));background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:4px;transition:background-image .3s,color .3s}
+  footer a.mail:hover{background-image:linear-gradient(var(--ink),var(--ink))}
   .foot-meta{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:2}
   @media(max-width:640px){.foot-meta{text-align:left}footer.site{padding:56px 0 48px}}
   .foot-legal{margin-top:40px;display:flex;gap:24px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
@@ -235,10 +235,10 @@
     <div class="stage reveal"><div class="visual v-emas"><div class="grid-lines"></div><div class="crane"></div><div class="facade"><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div><div class="win"></div></div><div class="logotype">EMAS</div><div class="sublabel">Residence</div></div></div>
     <div class="pbody">
       <p class="lede reveal">A sales platform for a residential development. Parcels, blocks and apartments live in one model, so a buyer scrolls from the site map down to a single unit without ever losing the thread.</p>
-      <div class="feat reveal"><div><h3>Site map to unit</h3><p>One scroll walks the buyer from the parcel plan to a block, a floor and finally one apartment.</p></div><div><h3>Live availability</h3><p>Sold, reserved and free units update in place — no stale PDF price lists.</p></div><div><h3>Unit dossier</h3><p>Surface, orientation, floor plan and price kept on the unit itself.</p></div><div><h3>Reservation trail</h3><p>Interest, reservation and paperwork stages tracked per unit.</p></div><div><h3>Mobile app</h3><p>The same catalogue in the sales agent's pocket, built in React Native.</p></div></div>
+      <div class="feat reveal"><div><h3>Site map to unit</h3><p>One scroll walks the buyer from the parcel plan to a block, a floor and finally one apartment.</p></div><div><h3>Live availability</h3><p>Sold, reserved and free units update in place — no stale PDF price lists.</p></div><div><h3>Unit dossier</h3><p>Surface, orientation, floor plan and price kept on the unit itself.</p></div><div><h3>Reservation trail</h3><p>Interest, reservation and paperwork stages tracked per unit.</p></div><div><h3>Mobile app</h3><p>The same catalogue in the sales agent's pocket, built in React Native.</p></div><div><h3>Cloud infrastructure</h3><p>Containers ship from GitLab CI to ECS in eu-central-1, with Cognito for identity, S3 and SES behind the scenes, CloudFront in front and OpenTelemetry tracing through the API.</p></div></div>
     </div>
     <div class="prow">
-      <div class="stack"><span>NestJS</span><span>Angular</span><span>React Native</span><span>PostgreSQL</span><span>iOS</span></div>
+      <div class="stack"><span>AWS ECS</span><span>Cognito</span><span>CloudFront</span><span>NestJS</span><span>Angular SSR</span><span>React Native</span></div>
       <div class="acts"><a class="act primary" href="https://emasresidence.ro" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&#8599;</span></a>
         <a class="act ghost" href="https://emasresidence.ro/privacy">Privacy</a>
         <a class="act ghost" href="https://emasresidence.ro/termeni">Terms</a>
@@ -258,7 +258,7 @@
       <div class="feat reveal"><div><h3>Zone alerts</h3><p>Draw a zone on the map; anything new inside it reaches you in seconds.</p></div><div><h3>Portal scraping</h3><p>Listings pulled continuously from the Romanian portals, deduplicated and geocoded.</p></div><div><h3>Buyer matching</h3><p>Every listing is scored against your clients' criteria — hot matches surface first.</p></div><div><h3>CRM for agents</h3><p>Clients, leads, viewings, deals and commissions in one pipeline.</p></div><div><h3>Market intel</h3><p>Local price movement, comparables and a morning brief in your inbox.</p></div><div><h3>Web and mobile</h3><p>Angular on the desktop, React Native on iOS and Android, one API behind both.</p></div></div>
     </div>
     <div class="prow">
-      <div class="stack"><span>NestJS</span><span>Angular</span><span>React Native</span><span>PostgreSQL</span><span>Maps</span><span>Scraping</span><span>LLM</span></div>
+      <div class="stack"><span>NestJS</span><span>Angular</span><span>React Native</span><span>PostgreSQL</span><span>Redis</span><span>Claude API</span></div>
       <div class="acts"><a class="act primary" href="https://plomus.ro" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&#8599;</span></a>
         <a class="act ghost" href="https://plomus.ro/privacy">Privacy</a>
         <a class="act ghost" href="https://plomus.ro/terms">Terms</a>
@@ -278,7 +278,7 @@
       <div class="feat reveal"><div><h3>Thirteen games</h3><p>Verse detective, who said it, word order, timeline, odd one out, two truths, and more.</p></div><div><h3>One round a day</h3><p>Server-authoritative daily puzzle, the same for everyone, keyed to the date.</p></div><div><h3>XP and streaks</h3><p>Progress is event-sourced, so a streak survives a bad connection or a reinstall.</p></div><div><h3>Weekly leagues</h3><p>Cohorts of about thirty players, ten tiers, promotion every Monday.</p></div><div><h3>Live duels</h3><p>Head-to-head rounds against a friend.</p></div><div><h3>Offline first</h3><p>Play with no signal; the server reconciles when you come back.</p></div><div><h3>Three languages</h3><p>Romanian, English and Spanish content packs kept in parity by a checker.</p></div></div>
     </div>
     <div class="prow">
-      <div class="stack"><span>React Native</span><span>NestJS</span><span>PostgreSQL</span><span>Redis</span><span>BullMQ</span><span>RO · EN · ES</span></div>
+      <div class="stack"><span>React Native</span><span>NestJS</span><span>PostgreSQL</span><span>Redis · BullMQ</span><span>Socket.IO</span><span>Stripe</span></div>
       <div class="acts"><span class="act dead">Coming 2026</span>
         <a class="act ghost" href="/legal/bibliada.html#privacy">Privacy</a>
         <a class="act ghost" href="/legal/bibliada.html#terms">Terms</a>
@@ -298,7 +298,7 @@
       <div class="feat reveal"><div><h3>Private groups</h3><p>Invite-only circles with roles for the people who host the table.</p></div><div><h3>Prayer requests</h3><p>Post a request, mark it answered, and keep the answer with it.</p></div><div><h3>A calm feed</h3><p>Chronological, no ranking, no infinite scroll.</p></div><div><h3>Comments</h3><p>Short replies in place, so a thread stays a conversation.</p></div><div><h3>Moderation</h3><p>Validation of new members and roles the host controls.</p></div><div><h3>Push, sparingly</h3><p>Notified when your circle needs you, not when an algorithm wants you.</p></div></div>
     </div>
     <div class="prow">
-      <div class="stack"><span>React Native</span><span>NestJS</span><span>PostgreSQL</span><span>iOS</span><span>Push</span></div>
+      <div class="stack"><span>React Native</span><span>NestJS</span><span>PostgreSQL</span><span>Firebase Push</span><span>iOS</span></div>
       <div class="acts"><a class="act primary" href="https://apps.apple.com/ro/app/breakfast-pray/id6765490933" target="_blank" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a>
         <a class="act ghost" href="mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20privacy">Privacy</a>
         <a class="act ghost" href="mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20terms">Terms</a>
@@ -310,7 +310,7 @@
 <footer class="site" id="contact">
   <div class="wrap">
     <div class="foot-grid">
-      <div><div class="eyebrow" style="margin-bottom:18px">Get in touch</div>
+      <div><div class="eyebrow" style="margin-bottom:14px">Get in touch</div>
         <div class="big"><a class="mail" href="mailto:contact@dragan.me">contact@dragan.me</a></div></div>
       <div class="foot-meta">Dragan Software Ultimate S.R.L.<br>Timișoara · România<br>© 2026</div>
     </div>
