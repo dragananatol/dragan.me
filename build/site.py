@@ -79,7 +79,7 @@ PROJECTS = [
    links=[("dead","Coming 2026",""),
           ("ghost","Privacy","/legal/bibliada.html#privacy"),
           ("ghost","Terms","/legal/bibliada.html#terms"),
-          ("ghost","Notify me","mailto:contact@dragan.me?subject=Bibliada")]),
+          ("ghost","Support","/support/bibliada.html")]),
 
  dict(slug="breakfast-pray", scene="bnp", idx="04", kind="Faith Community",
    status="On the App Store", name="Breakfast &amp; Pray", short="A quiet circle for prayer, kept off the noisy feeds.",
@@ -192,8 +192,7 @@ def page(title, desc, body, extra_css="", home=False):
       <div class="foot-meta">Dragan Software Ultimate S.R.L.<br>Timișoara · România<br>© 2026</div>
     </div>
     <div class="foot-legal">
-      <a href="/">Work</a><a href="/legal/bibliada.html">Bibliada legal</a>
-      <a href="/support/bibliada.html">Bibliada support</a><a href="mailto:contact@dragan.me?subject=Support">Support</a>
+      <a href="/">Work</a><a href="mailto:contact@dragan.me?subject=Support">Support</a>
     </div>
   </div>
 </footer>
