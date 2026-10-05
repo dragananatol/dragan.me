@@ -325,7 +325,18 @@ WanderTale shows no ads, does not track you across other apps or websites, and d
     IP address, platform, app version and the action — never your location.</li>
   <li><strong>Diagnostics</strong>: when the app crashes it sends the error message and stack trace, platform and app
     version to our server and to Sentry. These reports are not linked to your account.</li>
+  <li><strong>Product interaction</strong> (analytics, linked to you, first-party only): a few usage events, described
+    under <a href="#usage-events">First-party usage events</a> below.</li>
 </ul>
+
+<h3 id="usage-events">First-party usage events</h3>
+<p>To understand how people find and use WanderTale, the app sends a few usage events directly to our own servers —
+for example app first opened, sign-in screen shown, account created, a story played (the point of interest's ID only,
+never your location), a trip started, and the ad campaign name if you opened the app from a tagged link. They carry a
+random identifier created when the app is installed (not your device's advertising ID) and, once you are signed in,
+your account. We use no third-party analytics or advertising SDKs, do not track you across other apps or websites,
+and do not share these events with anyone. They are deleted after 400 days, and the link to your account is removed
+when you delete your account.</p>
 
 <h3>Why we use it, and on what legal basis</h3>
 <ul>
@@ -334,7 +345,7 @@ WanderTale shows no ads, does not track you across other apps or websites, and d
   <li>Background location, contact matching and push notifications: <strong>your consent</strong> (Art. 6(1)(a)), given
     through the phone's permission prompts. You can withdraw it at any time in the phone's settings; the rest of the
     app keeps working.</li>
-  <li>Security log, abuse prevention, moderation of public routes and crash diagnostics: our
+  <li>Security log, abuse prevention, moderation of public routes, crash diagnostics and first-party usage events: our
     <strong>legitimate interest</strong> in keeping the service secure and working (Art. 6(1)(f)).</li>
   <li>Where the law requires us to keep or hand over data: <strong>legal obligation</strong> (Art. 6(1)(c)).</li>
 </ul>
@@ -370,6 +381,8 @@ the provider is certified, and otherwise on the European Commission's Standard C
     account, so that abuse and attacks can still be investigated.</li>
   <li>Server logs: up to 30 days. Error reports in Sentry: up to 90 days.</li>
   <li>Push token: until you sign out, delete the account, or the token expires.</li>
+  <li>Usage events: 400 days; the link to your account is removed when you delete your account.</li>
+  <li>Database backups: kept 14–20 days, then overwritten. Deleted data disappears from backups within that period.</li>
 </ul>
 
 <h3>Your rights</h3>
@@ -424,7 +437,19 @@ WanderTale nu afișează reclame, nu te urmărește în alte aplicații sau site
     contului) înregistrăm id-ul de utilizator, adresa IP, platforma, versiunea aplicației și acțiunea — niciodată locația.</li>
   <li><strong>Diagnostic</strong>: când aplicația se blochează, trimite mesajul erorii și stack trace-ul, platforma și
     versiunea aplicației către serverul nostru și către Sentry. Aceste rapoarte nu sunt legate de contul tău.</li>
+  <li><strong>Interacțiunea cu produsul</strong> (statistici, legate de tine, doar proprii): câteva evenimente de
+    utilizare, descrise mai jos la <a href="#usage-events">Evenimente de utilizare proprii</a>.</li>
 </ul>
+
+<h3 id="usage-events">Evenimente de utilizare proprii</h3>
+<p>Ca să înțelegem cum găsesc și folosesc oamenii WanderTale, aplicația trimite câteva evenimente de utilizare direct
+către serverele noastre — de exemplu prima deschidere a aplicației, afișarea ecranului de autentificare, crearea
+contului, o poveste ascultată (doar ID-ul locului, niciodată locația ta), o călătorie începută și numele campaniei
+publicitare, dacă ai deschis aplicația dintr-un link etichetat. Ele poartă un identificator aleatoriu creat la
+instalarea aplicației (nu identificatorul de publicitate al dispozitivului) și, după ce te autentifici, contul tău.
+Nu folosim SDK-uri de statistici sau publicitate ale terților, nu te urmărim în alte aplicații sau site-uri și nu
+împărtășim aceste evenimente cu nimeni. Ele se șterg după 400 de zile, iar legătura cu contul tău se elimină când îți
+ștergi contul.</p>
 
 <h3>De ce le folosim și pe ce temei legal</h3>
 <ul>
@@ -433,7 +458,7 @@ WanderTale nu afișează reclame, nu te urmărește în alte aplicații sau site
   <li>Locația în fundal, potrivirea contactelor și notificările: <strong>consimțământul tău</strong> (art. 6 alin. (1) lit. a),
     dat prin solicitările de permisiune ale telefonului. Îl poți retrage oricând din setările telefonului; restul
     aplicației continuă să funcționeze.</li>
-  <li>Jurnalul de securitate, prevenirea abuzurilor, moderarea rutelor publice și diagnosticarea erorilor:
+  <li>Jurnalul de securitate, prevenirea abuzurilor, moderarea rutelor publice, diagnosticarea erorilor și evenimentele de utilizare proprii:
     <strong>interesul nostru legitim</strong> de a ține serviciul sigur și funcțional (art. 6 alin. (1) lit. f).</li>
   <li>Când legea ne obligă să păstrăm sau să predăm date: <strong>obligația legală</strong> (art. 6 alin. (1) lit. c).</li>
 </ul>
@@ -470,6 +495,8 @@ Comisiei Europene.</p>
     și după ștergerea contului, ca abuzurile și atacurile să poată fi investigate.</li>
   <li>Jurnalele serverului: până la 30 de zile. Rapoartele de erori din Sentry: până la 90 de zile.</li>
   <li>Tokenul de notificări: până te deconectezi, îți ștergi contul sau tokenul expiră.</li>
+  <li>Evenimentele de utilizare: 400 de zile; legătura cu contul tău se elimină când îți ștergi contul.</li>
+  <li>Copiile de rezervă ale bazei de date: păstrate 14–20 de zile, apoi suprascrise. Datele șterse dispar din copii în acest interval.</li>
 </ul>
 
 <h3>Drepturile tale</h3>
@@ -506,7 +533,8 @@ on the account, with the subject “Delete account”. We delete it and confirm 
 <h3>What is deleted</h3>
 <p>Your account, profile and photo, sessions, push tokens, last position, localities, trips, crews, routes,
 saved and listened stories and preferences are deleted at once. Only the security log keeps your user id and IP
-address, for up to 180 days, as described in the privacy policy.</p>
+address, for up to 180 days, and usage events stay for up to 400 days without the link to your account, as
+described in the privacy policy. Backups roll over within 14–20 days.</p>
 """, "ro": f"""
 <p>Îți poți șterge contul oricând, fără să ne ceri. Ștergerea este imediată și definitivă.</p>
 <h3>Din aplicație</h3>
@@ -518,7 +546,8 @@ contului, cu subiectul „Ștergere cont”. Îl ștergem și îți confirmăm.<
 <h3>Ce se șterge</h3>
 <p>Contul, profilul și poza, sesiunile, tokenurile de notificări, ultima poziție, localitățile, călătoriile,
 echipajele, rutele, poveștile salvate și ascultate și preferințele se șterg imediat. Doar jurnalul de securitate
-păstrează id-ul de utilizator și adresa IP, cel mult 180 de zile, așa cum scrie în politica de confidențialitate.</p>
+păstrează id-ul de utilizator și adresa IP, cel mult 180 de zile, iar evenimentele de utilizare rămân cel mult 400 de
+zile fără legătura cu contul tău, așa cum scrie în politica de confidențialitate. Copiile de rezervă se înlocuiesc în 14–20 de zile.</p>
 """}
 
 WT_SUPPORT = {"en": f"""

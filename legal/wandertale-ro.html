@@ -296,7 +296,19 @@ WanderTale nu afișează reclame, nu te urmărește în alte aplicații sau site
     contului) înregistrăm id-ul de utilizator, adresa IP, platforma, versiunea aplicației și acțiunea — niciodată locația.</li>
   <li><strong>Diagnostic</strong>: când aplicația se blochează, trimite mesajul erorii și stack trace-ul, platforma și
     versiunea aplicației către serverul nostru și către Sentry. Aceste rapoarte nu sunt legate de contul tău.</li>
+  <li><strong>Interacțiunea cu produsul</strong> (statistici, legate de tine, doar proprii): câteva evenimente de
+    utilizare, descrise mai jos la <a href="#usage-events">Evenimente de utilizare proprii</a>.</li>
 </ul>
+
+<h3 id="usage-events">Evenimente de utilizare proprii</h3>
+<p>Ca să înțelegem cum găsesc și folosesc oamenii WanderTale, aplicația trimite câteva evenimente de utilizare direct
+către serverele noastre — de exemplu prima deschidere a aplicației, afișarea ecranului de autentificare, crearea
+contului, o poveste ascultată (doar ID-ul locului, niciodată locația ta), o călătorie începută și numele campaniei
+publicitare, dacă ai deschis aplicația dintr-un link etichetat. Ele poartă un identificator aleatoriu creat la
+instalarea aplicației (nu identificatorul de publicitate al dispozitivului) și, după ce te autentifici, contul tău.
+Nu folosim SDK-uri de statistici sau publicitate ale terților, nu te urmărim în alte aplicații sau site-uri și nu
+împărtășim aceste evenimente cu nimeni. Ele se șterg după 400 de zile, iar legătura cu contul tău se elimină când îți
+ștergi contul.</p>
 
 <h3>De ce le folosim și pe ce temei legal</h3>
 <ul>
@@ -305,7 +317,7 @@ WanderTale nu afișează reclame, nu te urmărește în alte aplicații sau site
   <li>Locația în fundal, potrivirea contactelor și notificările: <strong>consimțământul tău</strong> (art. 6 alin. (1) lit. a),
     dat prin solicitările de permisiune ale telefonului. Îl poți retrage oricând din setările telefonului; restul
     aplicației continuă să funcționeze.</li>
-  <li>Jurnalul de securitate, prevenirea abuzurilor, moderarea rutelor publice și diagnosticarea erorilor:
+  <li>Jurnalul de securitate, prevenirea abuzurilor, moderarea rutelor publice, diagnosticarea erorilor și evenimentele de utilizare proprii:
     <strong>interesul nostru legitim</strong> de a ține serviciul sigur și funcțional (art. 6 alin. (1) lit. f).</li>
   <li>Când legea ne obligă să păstrăm sau să predăm date: <strong>obligația legală</strong> (art. 6 alin. (1) lit. c).</li>
 </ul>
@@ -342,6 +354,8 @@ Comisiei Europene.</p>
     și după ștergerea contului, ca abuzurile și atacurile să poată fi investigate.</li>
   <li>Jurnalele serverului: până la 30 de zile. Rapoartele de erori din Sentry: până la 90 de zile.</li>
   <li>Tokenul de notificări: până te deconectezi, îți ștergi contul sau tokenul expiră.</li>
+  <li>Evenimentele de utilizare: 400 de zile; legătura cu contul tău se elimină când îți ștergi contul.</li>
+  <li>Copiile de rezervă ale bazei de date: păstrate 14–20 de zile, apoi suprascrise. Datele șterse dispar din copii în acest interval.</li>
 </ul>
 
 <h3>Drepturile tale</h3>
@@ -377,7 +391,8 @@ contului, cu subiectul „Ștergere cont”. Îl ștergem și îți confirmăm.<
 <h3>Ce se șterge</h3>
 <p>Contul, profilul și poza, sesiunile, tokenurile de notificări, ultima poziție, localitățile, călătoriile,
 echipajele, rutele, poveștile salvate și ascultate și preferințele se șterg imediat. Doar jurnalul de securitate
-păstrează id-ul de utilizator și adresa IP, cel mult 180 de zile, așa cum scrie în politica de confidențialitate.</p>
+păstrează id-ul de utilizator și adresa IP, cel mult 180 de zile, iar evenimentele de utilizare rămân cel mult 400 de
+zile fără legătura cu contul tău, așa cum scrie în politica de confidențialitate. Copiile de rezervă se înlocuiesc în 14–20 de zile.</p>
 </section>
 </div></section>
 
