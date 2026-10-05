@@ -27,6 +27,9 @@ SCENE_HTML = {
  "bnp": '<div class="rays"></div><div class="haze"></div><div class="horizon"></div><div class="sun"></div>'
         '<div class="mote m1"></div><div class="mote m2"></div><div class="mote m3"></div><div class="mote m4"></div>'
         '<div class="logotype">Breakfast &amp; Pray</div><div class="sublabel">Morning community</div>',
+ "wt": '<div class="eq">' + '<i></i>' * 11 + '</div><div class="road"></div>'
+       '<div class="pin p1"></div><div class="pin p2"></div><div class="pin p3"></div><div class="car"></div>'
+       '<div class="logotype">WanderTale</div><div class="sublabel">Stories of the road</div>',
 }
 
 PROJECTS = [
@@ -98,6 +101,23 @@ PROJECTS = [
           ("ghost","Privacy","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20privacy"),
           ("ghost","Terms","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray%20terms"),
           ("ghost","Support","mailto:contact@dragan.me?subject=Breakfast%20%26%20Pray")]),
+
+ dict(slug="wandertale", scene="wt", idx="05", kind="AI Audio Companion",
+   status="In App Store review", name="WanderTale", short="Stories of the places you pass, narrated as you drive or walk.",
+   tagline="Povestea locurilor pe lângă care treci.",
+   intro="An audio companion for road trips and walks. As you pass a village, a castle or a battlefield, "
+         "WanderTale tells you what happened there — written from history, read aloud, and timed to the road.",
+   features=[("Stories on the move","A story starts as you approach a place — in the car or on foot, with the phone locked in your pocket."),
+             ("History first","Events, eras and people, grounded in Wikipedia and OpenStreetMap and written by Gemini."),
+             ("Narrated voices","F5, Kokoro and Vosk speech models on Modal GPUs; every story is synthesised once and cached."),
+             ("Trips and walks","Plan a drive between towns or a walk through one, with detours worth taking."),
+             ("Crews","Share a trip with the people in the car and vote on what to hear next."),
+             ("Coverage","Romania, Moldova and Italy, with a PostGIS map of every place worth a story.")],
+   stack=["React Native","iOS","NestJS","PostgreSQL · PostGIS","Modal · TTS","Gemini"],
+   links=[("dead","In review",""),
+          ("ghost","Privacy","/legal/wandertale.html#privacy"),
+          ("ghost","Terms","/legal/wandertale.html#terms"),
+          ("ghost","Support","/support/wandertale.html")]),
 ]
 
 def acts(links):
@@ -109,9 +129,9 @@ def acts(links):
     return "\n        ".join(out)
 
 # ------------------------------------------------------------------ shell
-def page(title, desc, body, extra_css="", home=False):
+def page(title, desc, body, extra_css="", home=False, lang="en"):
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,7 +191,7 @@ def page(title, desc, body, extra_css="", home=False):
   .reveal.in{{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){{
     .reveal{{opacity:1;transform:none;transition:none}}
-    .win,.crane,.sweep,.sweep-line,.blip,.passage .ln,.passage .ref,.gilt,.rays,.sun,.haze,.mote{{animation:none!important}}
+    .win,.crane,.sweep,.sweep-line,.blip,.passage .ln,.passage .ref,.gilt,.rays,.sun,.haze,.mote,.v-wt .car,.v-wt .pin::after,.v-wt .eq i{{animation:none!important}}
     .passage .ln,.passage .ref,.blip{{opacity:1}} html{{scroll-behavior:auto}}
   }}
 {extra_css}
@@ -365,7 +385,7 @@ def product_page(p, nxt):
     return page(f"{p['name'].replace('&amp;','&')} — Dragan", p["short"], body, PRODUCT_CSS)
 
 (OUT/"index.html").write_text(page("Dragan — Work",
-  "A small engineering studio in Timișoara. EMAS Residence, Plomus, Bibliada and Breakfast & Pray.",
+  "A small engineering studio in Timișoara. EMAS Residence, Plomus, Bibliada, Breakfast & Pray and WanderTale.",
   index_body, INDEX_CSS, home=True), encoding="utf-8")
 
 # ------------------------------------------------------------------ 404

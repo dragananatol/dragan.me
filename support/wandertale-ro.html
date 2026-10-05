@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Not found — Dragan</title>
-<meta name="description" content="Nothing lives at this address.">
+<title>WanderTale — Suport</title>
+<meta name="description" content="Contact și întrebări frecvente pentru aplicația WanderTale.">
 <meta name="theme-color" content="#FAFAF8">
-<meta property="og:title" content="Not found — Dragan"><meta property="og:description" content="Nothing lives at this address."><meta property="og:type" content="website">
+<meta property="og:title" content="WanderTale — Suport"><meta property="og:description" content="Contact și întrebări frecvente pentru aplicația WanderTale."><meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>D</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -171,14 +171,26 @@
     .passage .ln,.passage .ref,.blip{opacity:1} html{scroll-behavior:auto}
   }
 
-  .nf{min-height:calc(100svh - 74px - 200px);display:flex;align-items:center;padding:clamp(56px,12vh,120px) 0}
-  .nf h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,6vw,72px);line-height:1.05;letter-spacing:-.015em;margin:18px 0 0}
-  .nf .lede{font-family:var(--display);font-size:clamp(18px,2.2vw,26px);color:var(--muted);margin-top:18px;max-width:34ch}
-  .nf .code{font-family:var(--sans);font-weight:400;font-size:clamp(22px,3.4vw,34px);letter-spacing:.14em;
-    margin-top:30px;padding:18px 24px;border:1px solid var(--line);border-radius:14px;background:var(--card);
-    display:inline-block;word-break:break-all;-webkit-user-select:all;user-select:all}
-  .nf .acts{margin-top:34px}
-  .nf .hint{margin-top:16px;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+  .doc{padding:clamp(48px,8vh,92px) 0 0;max-width:760px}
+  .doc h1{font-family:var(--display);font-weight:300;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.01em;margin:18px 0 10px}
+  .doc .upd{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .toc{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}
+  .toc a{font-size:10px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--muted);
+    border:1px solid var(--line);border-radius:100px;padding:9px 15px;transition:.25s}
+  .toc a:hover{color:var(--ink);border-color:var(--edge)}
+  .sec{padding:clamp(40px,6vh,64px) 0 0}
+  .sec > h2{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,34px);margin-bottom:6px}
+  .sec > .num{font-size:10px;letter-spacing:.26em;color:var(--muted)}
+  .sec h3{font-size:12px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;margin:26px 0 8px}
+  .sec p{font-size:15px;color:var(--muted);margin-bottom:12px}
+  .sec ul{margin:0 0 12px 18px}
+  .sec li{font-size:15px;color:var(--muted);margin-bottom:7px}
+  .sec strong{color:var(--ink);font-weight:400}
+  .sec a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .sec a:hover{border-color:var(--ink)}
+  .note{border-left:1px solid var(--edge);padding:4px 0 4px 18px;margin:18px 0}
+  .back{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--ink)}
 
 </style>
 </head>
@@ -190,49 +202,32 @@
   </div>
 </header>
 
-<section class="nf">
-  <div class="wrap">
-    <div class="eyebrow" id="nfKicker">Error 404</div>
-    <h1 id="nfTitle">This page moved on.</h1>
-    <p class="lede" id="nfLede">Nothing lives at this address. The work is one click away.</p>
-    <div class="code" id="nfCode" hidden></div>
-    <div class="acts" id="nfActs"><a class="act primary" href="/">All work</a></div>
-    <p class="hint" id="nfHint" hidden></p>
-    <noscript><p class="hint">Codul invitației este ultima parte a adresei din bara browserului.</p></noscript>
-  </div>
+<section class="doc"><div class="wrap">
+  <a class="back" href="/">← Dragan.me</a>
+  <div class="upd" style="margin-top:26px">Suport</div>
+  <h1>WanderTale — suport</h1>
+  <div class="toc"><a href="/legal/wandertale-ro.html#terms">Termeni</a><a href="/legal/wandertale-ro.html#privacy">Confidențialitate</a><a href="/legal/wandertale-ro.html#delete">Ștergerea contului</a>
+    <a href="/support/wandertale.html" hreflang="en">English</a></div>
+  <section class="sec">
+<p>WanderTale este făcut de un singur dezvoltator din România. Scrie-ne direct — de obicei răspundem în două zile lucrătoare.</p>
+<h3>Contact</h3>
+<p><a href="mailto:contact@dragan.me?subject=WanderTale">contact@dragan.me</a></p>
+<h3>Întrebări frecvente</h3>
+<p><strong>Am nevoie de cont?</strong> Da — te înregistrezi cu email, Apple sau Google. Contul funcționează imediat
+ce emailul este verificat.</p>
+<p><strong>Nu am primit codul de verificare.</strong> Verifică dosarul spam, apoi apasă „Retrimite codul”. Fiecare email
+nou înlocuiește codul anterior.</p>
+<p><strong>Am uitat parola.</strong> Folosește „Am uitat parola” pe ecranul de autentificare; primești un link de resetare pe email.</p>
+<p><strong>De ce nu sunt povești în jurul meu?</strong> WanderTale acoperă România, Moldova și Italia. Prima vizită într-o
+zonă nouă poate dura câteva secunde cât se încarcă locurile; dacă nu e nimic aproape, aplicația arată cele mai apropiate povești.</p>
+<p><strong>Poveștile se opresc când se blochează ecranul.</strong> Permite locația „Întotdeauna” pentru WanderTale din
+setările telefonului — narațiunea în fundal are nevoie de ea. O poți schimba oricând înapoi pe „Când folosesc aplicația”.</p>
+<p><strong>O poveste e greșită.</strong> Poveștile sunt generate cu AI și pot conține greșeli. Trimite-ne numele locului,
+limba și, dacă poți, o captură de ecran — corectăm povestea fără o actualizare a aplicației.</p>
+<p><strong>Cum îmi șterg contul?</strong> Din <strong>Setări → Șterge contul</strong>, sau vezi
+<a href="/legal/wandertale-ro.html#delete">ștergerea contului</a>.</p>
 </section>
-<script>
-  // /bibliada/i/<code> — the invite link. Anything else stays a plain 404.
-  var m = location.pathname.match(/^\/bibliada\/i\/([^\/]+)\/?$/);
-  if (m) {
-    var code = decodeURIComponent(m[1]).trim().slice(0, 64);
-    if (code) {
-      document.title = 'Invitație Bibliada — Dragan';
-      document.getElementById('nfKicker').textContent = 'Bibliada';
-      document.getElementById('nfTitle').textContent = 'Ai primit o invitație la Bibliada.';
-      document.getElementById('nfLede').textContent =
-        'Deschide aplicația și folosește codul de mai jos ca să deveniți prieteni.';
-      var el = document.getElementById('nfCode');
-      el.textContent = code;           // textContent, never innerHTML — the code is URL-supplied
-      el.hidden = false;
-      document.getElementById('nfActs').innerHTML = '';
-      var open = document.createElement('a');
-      open.className = 'act primary';
-      open.href = 'bibliada://i/' + encodeURIComponent(code);
-      open.textContent = 'Deschide în aplicație';
-      var play = document.createElement('a');
-      play.className = 'act';
-      play.href = 'https://play.google.com/store/apps/details?id=com.bibliada';
-      play.textContent = 'Google Play';
-      document.getElementById('nfActs').append(open, play);
-      var hint = document.getElementById('nfHint');
-      // ponytail: no App Store deep link — the numeric app id does not exist in
-      // any repo yet. Swap for https://apps.apple.com/app/id<id> once published.
-      hint.textContent = 'Pe iPhone, caută Bibliada în App Store.';
-      hint.hidden = false;
-    }
-  }
-</script>
+</div></section>
 
 <footer class="site" id="contact">
   <div class="wrap">

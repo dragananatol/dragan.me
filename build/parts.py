@@ -4,7 +4,8 @@ SCENES = '''  /* ---- toate cele 4 scene stau in acelasi registru tonal:
   .v-emas,
   .v-plomus,
   .v-bibliada,
-  .v-bnp {--vs-bg:linear-gradient(160deg,#EFEDE5,#E2E0D6);--vs-ink:#232320;--vs-mut:#77746A;--vs-grid:#0000000e;--vs-edge:#00000038;--vs-fill:#00000020;--vs-lit:#0000005e}
+  .v-bnp,
+  .v-wt {--vs-bg:linear-gradient(160deg,#EFEDE5,#E2E0D6);--vs-ink:#232320;--vs-mut:#77746A;--vs-grid:#0000000e;--vs-edge:#00000038;--vs-fill:#00000020;--vs-lit:#0000005e}
   .visual{background:var(--vs-bg)}
   .visual .logotype{color:var(--vs-ink)}
   .visual .sublabel{color:var(--vs-mut)}
@@ -83,5 +84,25 @@ SCENES = '''  /* ---- toate cele 4 scene stau in acelasi registru tonal:
   @keyframes rise{0%{top:78%;opacity:.35}46%{top:38%;opacity:1}56%{top:38%;opacity:1}100%{top:78%;opacity:.35}}
   @keyframes haze{0%,100%{opacity:.35}50%{opacity:.9}}
   @keyframes lift{0%{bottom:24%;opacity:0}15%{opacity:.8}60%{opacity:.45}80%{bottom:60%;opacity:0}100%{opacity:0}}
+
+  /* 05 WANDERTALE — a road; each place the car reaches starts to speak */
+  .v-wt .logotype{font-size:clamp(38px,5.6vw,60px)}
+  .v-wt .road{position:absolute;left:0;right:0;top:70%;height:16px;margin-top:-8px;border-top:1px solid var(--vs-edge);border-bottom:1px solid var(--vs-edge);z-index:1;
+    background:repeating-linear-gradient(90deg,var(--vs-edge) 0 14px,transparent 14px 28px) 0 50%/100% 1px no-repeat}
+  .v-wt .car{position:absolute;top:70%;left:-2%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--vs-ink);z-index:3;animation:drive 9s linear infinite}
+  .v-wt .pin{position:absolute;top:70%;width:7px;height:7px;margin:-34px 0 0 -3.5px;border-radius:50%;border:1px solid var(--vs-ink);z-index:2}
+  .v-wt .pin::before{content:"";position:absolute;left:2.5px;top:6px;width:1px;height:20px;background:var(--vs-edge)}
+  .v-wt .pin::after{content:"";position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;border:1px solid var(--vs-ink);opacity:0;animation:tell 9s ease-out infinite;animation-delay:var(--d)}
+  .v-wt .pin.p1{left:22%;--d:2.08s}
+  .v-wt .pin.p2{left:50%;--d:4.42s}
+  .v-wt .pin.p3{left:78%;--d:6.75s}
+  .v-wt .eq{position:absolute;left:50%;top:24%;transform:translateX(-50%);display:flex;gap:4px;height:22px;z-index:2}
+  .v-wt .eq i{width:2px;height:100%;background:var(--vs-edge);transform:scaleY(.25);animation:eq 1.6s ease-in-out infinite}
+  .v-wt .eq i:nth-child(2n){animation-delay:.35s}
+  .v-wt .eq i:nth-child(3n){animation-delay:.7s}
+  .v-wt .eq i:nth-child(5n){animation-delay:1.05s}
+  @keyframes drive{to{left:102%}}
+  @keyframes tell{0%{opacity:.8;transform:scale(.15)}35%{opacity:0;transform:scale(1)}100%{opacity:0}}
+  @keyframes eq{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
 
 '''
